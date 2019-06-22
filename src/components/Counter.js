@@ -4,10 +4,10 @@ export class Counter extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            score: 0,
-            time: 10
-        };
+        // this.state = {
+        //     score: 0,
+        //     time: 10
+        // };
         //this.incrementScore = this.incrementScore.bind(this);
     }
 
@@ -25,7 +25,7 @@ export class Counter extends React.Component {
         return (
             <div className='counter'>
                 <button className='counter-action decrement' onClick={() => this.handleScore(-1)}>-</button>
-                <span className='counter-score'>{this.state.score}</span>
+                <span className='counter-score'>{this.props.score}</span>
                 <button className='counter-action increment' onClick={() => this.handleScore(1)}>+</button>
             </div>
         )

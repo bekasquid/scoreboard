@@ -6,10 +6,10 @@ import {Player} from "./components/Player";
 class App extends React.Component {
   state = {
     players: [
-      {name: 'LDK', id: 1},
-      {name: 'HONG', id: 2},
-      {name: 'KIM', id: 3},
-      {name: 'PARK', id: 4}
+      {name: 'LDK', id: 1, score: 0},
+      {name: 'HONG', id: 2, score: 0},
+      {name: 'KIM', id: 3, score: 0},
+      {name: 'PARK', id: 4, score: 0}
     ]
   }
 
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
         <div className='scoreboard'>
           <Header title='My Scoreboard' totalPlayers={this.state.players.length} />
-          { this.state.players.map(player => <Player name={player.name} id={player.id} key={player.id} removePlayer={this.handleRemovePlayer} />) }
+          { this.state.players.map(player => <Player name={player.name} id={player.id} score={player.score} key={player.id} removePlayer={this.handleRemovePlayer} />) }
         </div>
     )
   }
