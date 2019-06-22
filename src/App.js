@@ -25,8 +25,16 @@ class App extends React.Component {
     * @param id : 플레이어 아이디
     * @param delta 증가면 1 감소면 -1
   */
-  handleChangeScore(id, delta) {
-      console.log("change Score", id, delta);
+  handleChangeScore = (id, delta) => {
+      // console.log("change Score", id, delta);
+      this.setState(prevState => {
+        prevState.players.forEach(player => {
+          if (player.id === id) {
+            player.score += delta;
+          }
+        })
+        return {players: [...prevState.players]}
+      })
   }
 
   render() {
