@@ -13,6 +13,7 @@ class App extends React.Component {
       {name: 'PARK', id: 4, score: 0}
     ]
   }
+  maxId = this.state.players.length;
 
   handleRemovePlayer = (id) => {
     console.log('remove player:', id);
@@ -40,6 +41,16 @@ class App extends React.Component {
 
   handleAddPlayer = (name) => {
     console.log('add player name:', name);
+    this.setState(prevState => {
+      prevState.players.push({
+        name,
+        id: ++this.maxId,
+        score: 0
+      })
+      return {
+        players: [...prevState.players]
+      }
+    })
   }
 
   render() {
