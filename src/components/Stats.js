@@ -22,3 +22,9 @@ export const Stats = (props) => {
         </table>
     );
 }
+
+// Stats.propTypes = {
+//     players: PropTypes.arrayOf(PropTypes.shape({
+//         score: PropTypes.number
+//     }))
+// }
